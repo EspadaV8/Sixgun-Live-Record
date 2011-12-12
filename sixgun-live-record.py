@@ -10,17 +10,17 @@ cal_location = "https://www.google.com/calendar/ical/sixgun.org_kb0f1ok5gvtnfk50
 stream = "http://65.60.11.2:8216/live"
 
 # Filename to save the ical file to
-file_name = "sixgun.ics"
+#file_name = "sixgun.ics"
 
 # Check to see if the file exists (possible race condition)
-if not os.path.isfile(file_name):
-    file(file_name, 'w').close()
+#if not os.path.isfile(file_name):
+#    file(file_name, 'w').close()
 
 # Open the file for writing, download the ical and save it locally
-f = open(file_name, 'r+')
+#f = open(file_name, 'r+')
 u = urllib2.urlopen(cal_location)
 data = u.read()
-f.write(data)
+#f.write(data)
 
 # There should be some checking here to see if the calendars have changed
 # but Google update the DTSTAMP every time the ical is downloaded so any
