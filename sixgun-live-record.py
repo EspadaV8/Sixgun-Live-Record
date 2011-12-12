@@ -54,4 +54,4 @@ for c in cal.walk():
             dur = late - early
 
             # Example crontab entry to record the stream
-            print early.strftime("%M %H %d %m %w %Y"),"streamripper",stream,"-l",dur.seconds
+            print early.strftime("%M %H %d %m %w %Y"),"streamripper","-l",dur.seconds,stream
