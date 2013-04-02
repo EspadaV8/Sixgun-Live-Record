@@ -35,11 +35,12 @@ now = datetime.now(pytz.utc)
 # Go over all the entries
 for c in cal.walk():
     # If it's a VFREEBURY entry then check it out
-    if c.name == "VFREEBUSY":
+    if c.name == "VEVENT":
         # Get the starting time and make sure that it's a datetime instance
         # and it's in the future
         dtstart = str(c['dtstart'])
         ds = vDDDTypes.from_ical(dtstart)
+
         if(isinstance(ds, datetime)) and (ds > now):
             # Start 30 minutes before the live stream is meant to start
             early = ds - timedelta(minutes=30)
